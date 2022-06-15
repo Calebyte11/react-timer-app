@@ -3,8 +3,6 @@ import TimerHeader from './TimerHeader';
 import TimerFormToogle from './TimerFormToogle';
 import TimerList from './TimerList';
 import TimerForm from './TimerForm';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFolderPlus } from '@fortawesome/free-solid-svg-icons';
 
 
   
@@ -122,12 +120,7 @@ function TimerDashboard() {
   let timersArr = getTimerLocalStorage();
   console.log(timersArr);
 
-
-  //==== changing of the create button ======
-    const submitText = <div>
-                        <span>Create</span>
-                        <FontAwesomeIcon className='icons' icon={faFolderPlus }/>
-                      </div>
+ 
 
 
 
@@ -139,7 +132,7 @@ function TimerDashboard() {
       <div className='dashBoard' >
         <TimerHeader/>
         <div className='toogledForm'>
-          <TimerForm timers = {timerState} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick} submitText ={submitText} />
+          <TimerForm createForm ={true} timers = {timerState} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick} />
         </div>
       </div>
     )

@@ -1,6 +1,8 @@
 import React , { useState}from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faX} from '@fortawesome/free-solid-svg-icons';
+import {faFolderOpen } from '@fortawesome/free-solid-svg-icons';
+import {faFolderPlus } from '@fortawesome/free-solid-svg-icons';
 import { v4 as uuid} from 'uuid';
 
 function TimerForm(props) {
@@ -20,15 +22,15 @@ function TimerForm(props) {
       label : 'Title :',
       placeholder : 'Enter the title...',
       name : 'title',
-      required: true,
+      autoFocus : true
     },
     {
       id : 2,
       type : 'datetime-local',
       label : 'Date & Time :',
-      placeholder : ' ',
+      placeholder : '',
       name : 'dateTime',
-      required: true,
+      autoFocus : false
     }
   ];
   
@@ -44,7 +46,6 @@ function TimerForm(props) {
 
   //========== AND SUBMIT HANDLER =========
   const submitHandler = (e) => {
-    // console.log(userinputs);
 
     props.saveClickHandler({
       title : userinputs.title,
@@ -54,29 +55,43 @@ function TimerForm(props) {
   };
 
   //==== changes on the create or update button ======
-  const submitText = props.submitText;
+  const submitBtn = props.createForm ?  <>
+                                          <span>Create</span>
+                                          <FontAwesomeIcon className='icons' icon={faFolderPlus }/>
+                                        </>
+                                        : 
+                                        <>
+                                          <span>Update</span>
+                                          <FontAwesomeIcon className='icons' icon={faFolderOpen }/>
+                                        </>
 
+
+  // ======== RENDERING  OF JSX ============
   return (
     <div>
         <form className='timerForm' >
             {inputs.map( (input) => {
               return(
-                <div key={input.id}>
+                <React.Fragment key={input.id}>
                   <label>{input.label}</label>
-                  <input key={input.id} {...input} value ={userinputs[input.name]} onChange={handleChange}/>
-                </div>
+                  <input {...input} value ={userinputs[input.name]} onChange={handleChange} autoFocus={input.autoFocus} />
+                </React.Fragment>
               )
               })
             }
+
             <div className='formButtons'>
               <button className='cancelBtn' onClick ={props.cancelClickHandler}>
-                <div>  
+                <>  
                   <span>Cancel</span>
                   <FontAwesomeIcon className='icons' icon={faX} />
-                </div>
+                </>
               </button>
               <button className='saveBtn' onClick ={submitHandler} >
-                {submitText}
+                {
+                  submitBtn
+            
+                }
               </button>
             </div>
 

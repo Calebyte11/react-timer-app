@@ -1,8 +1,7 @@
 import React from 'react';
 import TimerForm from './TimerForm';
 import TimerMain from './TimerMain';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFolderOpen } from '@fortawesome/free-solid-svg-icons';
+// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { useState } from 'react';
 
 
@@ -55,12 +54,6 @@ function TimerContainer(props) {
   };
 
 
-
-    //==== changing to the update button ======
-  const submitText = <div>
-                        <span>Update</span>
-                        <FontAwesomeIcon className='icons' icon={faFolderOpen }/>
-                      </div>
 
    // ============ MAIN TIMING FUNCTION =========
   const countdownTimer = (timers) => {
@@ -123,10 +116,8 @@ function TimerContainer(props) {
 
   //======================================= RENDERING =================================================================
 
-                
-  // =========== RENDERING CONDITIONALLY ==========
   if (formopen.isFormOpen === true) {
-    return <TimerForm timers ={props.timers} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick} submitText ={submitText} />
+    return <TimerForm createForm = {false} timers = {props.timers} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick}/>
 
   } else {
       return (
