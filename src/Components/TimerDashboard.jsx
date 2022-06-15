@@ -20,6 +20,7 @@ function TimerDashboard() {
       isAddFormOn : false
   });
 
+  const [darkMode, setDarkMode] = useState(true)
 
   //========= DASHBOARD HANDLERS FOR FORMS AND TIMERS (creating,updating and deleting = CRUD) ==========
   const handleCreateFormSubmit = (timer) => {
@@ -45,11 +46,18 @@ function TimerDashboard() {
 
 
   // =============== TOOGLE ACTIVITIES ============
+
+    // == darkMode toogler ===
+  const handleModeChange = (e) => {
+    setDarkMode(!darkMode)
+    console.log(darkMode);
+  };
+
   const toogledAddHandler = (e) => {
     setToogledAdd({
       isAddFormOn : true
     });
-    console.log('TOOGLED1!!!');
+    console.log('TOOGLED!!!');
   };
   const stateReturn = () => {
     setToogledAdd({
@@ -116,21 +124,18 @@ function TimerDashboard() {
     localStorage.setItem('timers', JSON.stringify( timers.filter((timer) => timer.id !== removedtimer.id) ))
   }
 
-// ======== ARRAY OF TIMERS TO BE PASSED TO THE CHILD(timersList)=========
+  // ======== ARRAY OF TIMERS TO BE PASSED TO THE CHILD(timersList)=========
   let timersArr = getTimerLocalStorage();
   console.log(timersArr);
 
  
 
-
-
-
-  //============== JSX ( conditionally rendering the components to dashboard ) ============
+  //============== RENDERING JSX ( conditionally rendering the components to dashboard ) ============
   
   if (toogledAdd.isAddFormOn) {
     return (
       <div className='dashBoard' >
-        <TimerHeader/>
+        <TimerHeader inDarkMode = {darkMode} modeChangeHandler = {handleModeChange}/>
         <div className='toogledForm'>
           <TimerForm createForm ={true} timers = {timerState} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick} />
         </div>
@@ -139,8 +144,7 @@ function TimerDashboard() {
   } else {
     return ( 
       <div className='dashBoard' >
-        
-        <TimerHeader/>
+        <TimerHeader inDarkMode = {darkMode} modeChangeHandler = {handleModeChange} />
         <TimerList timersArr = {timersArr} onDeleteClick = {deleteClickHandler} onEditFormSubmit = {handleEditFormSubmit} />
         <TimerFormToogle toogledAdd= {toogledAddHandler}/>
       </div>

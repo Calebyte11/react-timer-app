@@ -7,8 +7,6 @@ import TimerDashboard from './Components/TimerDashboard';
 
 function App() {
   
-// const element = 
-
   return (
     <div className="App">
       <TimerDashboard/>

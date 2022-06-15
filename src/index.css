@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  color: #fafafa;
   background-color: #101214;
   background-size: cover;
   background-position: center;
@@ -15,14 +16,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .App{
   margin: 0%;
   margin-top: 0%;
   padding-top: 0%;
-  height: 100%;
+  position: relative;
 }
-.dashBoard{
-  color: #fafafa;
+.dashBoard [darkMode = true]{
+  display: none;
 }
 
 /* ======= HEADER NAV ========== */
@@ -47,17 +49,17 @@ code {
   border: 1px solid #a1a2a3;
   height: 50px;
 }
-.hamburgMenu{
+.modeMenu{
   background-color: transparent;
   border: none;
-  color:  #fafafa;
   font-size: 30px;
+  color: #fafafa;
 }
 
 /* ==========TIMERLIST AND IT'S TIMER CONTAINERS ========== */
 .TimerList{
   margin-top: 90px;
-  margin-bottom: 90px;
+  margin-bottom: 30px;
 }
 /* ==== then the timer containers ==== */
 .TimerContainer{
@@ -111,7 +113,6 @@ code {
   text-align: justify;
   font-size: 14px;
   font-weight: bolder;
-  color: #fafafa;
   text-transform: uppercase;
 }
 .timer_words{
@@ -144,19 +145,20 @@ code {
 .TimerBtn{
   position: fixed;
   bottom: 10px;
-  right: 0px;
   left: 0px;
+  right: 0px;
   z-index: 9999;
-  width: 72px;
-  aspect-ratio: 1;
+  margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
+  width: 72px;
+  aspect-ratio: 1;
   background-color: #171b1f;
   backdrop-filter: blur(100px);
   border-radius: 40px;
   border: 1px solid #a1a2a3;
-  color: #fafafa;
   font-size: 40px;
+  color: #fafafa;
 }
 
 
@@ -177,7 +179,7 @@ code {
   border: 1px solid #a1a2a3;
   z-index: 1;
   font-size: 17px;
-  color: #fafafa;
+  
 }
 .timerForm input{
   width: 95%;

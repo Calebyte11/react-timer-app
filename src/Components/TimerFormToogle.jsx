@@ -19,7 +19,7 @@ function TimerFormToogle(props) {
   
 
     return (
-      <div>
+      <div className='toogle' >
         <button className='TimerBtn' onClick={handleAddClick}>
             <FontAwesomeIcon icon={faPlus} />
         </button>
