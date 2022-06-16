@@ -132,9 +132,15 @@ function TimerDashboard() {
 
   //============== RENDERING JSX ( conditionally rendering the components to dashboard ) ============
   
+  let className = 'dashboard';
+  if(darkMode === false){
+    className += '_dark'
+  }
+  
   if (toogledAdd.isAddFormOn) {
+    
     return (
-      <div className='dashBoard' >
+      <div className={className} >
         <TimerHeader inDarkMode = {darkMode} modeChangeHandler = {handleModeChange}/>
         <div className='toogledForm'>
           <TimerForm createForm ={true} timers = {timerState} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick} />
@@ -142,11 +148,12 @@ function TimerDashboard() {
       </div>
     )
   } else {
+    
     return ( 
-      <div className='dashBoard' >
+      <div className={className} >
         <TimerHeader inDarkMode = {darkMode} modeChangeHandler = {handleModeChange} />
-        <TimerList timersArr = {timersArr} onDeleteClick = {deleteClickHandler} onEditFormSubmit = {handleEditFormSubmit} />
-        <TimerFormToogle toogledAdd= {toogledAddHandler}/>
+        <TimerList inDarkMode = {darkMode} timersArr = {timersArr} onDeleteClick = {deleteClickHandler} onEditFormSubmit = {handleEditFormSubmit} />
+        <TimerFormToogle inDarkMode = {darkMode} toogledAdd= {toogledAddHandler}/>
       </div>
     )  
   }

@@ -8,9 +8,15 @@ function TimerMain(props) {
     const timersEls = props.timersEls
     //   console.log(timersEls);
 
+    let className = "TimerContainer";
+    if (props.inDarkMode) {
+        className = "TimerContainer"
+    } else {
+        className += '_dark'
+    }
 
     return (
-        <div className='TimerContainer'>
+        <div className={className}>
 
             <div className='containerHead'>
                 <div>

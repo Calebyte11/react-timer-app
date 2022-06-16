@@ -27,7 +27,7 @@ class TimerList extends Component {
                 <div className='TimerList'>
                     {
                         timersArr.map( (timers) => {
-                           return <TimerContainer key ={timers.id} timers = {timers} onDeleteClick ={this.props.onDeleteClick} onEditFormSubmit = {this.props.onEditFormSubmit} />
+                           return <TimerContainer key ={timers.id} timers = {timers} onDeleteClick ={this.props.onDeleteClick} onEditFormSubmit = {this.props.onEditFormSubmit} inDarkMode = {this.props.inDarkMode}/>
                         })
                     }
                 </div>

@@ -116,15 +116,12 @@ function TimerContainer(props) {
 
   //======================================= RENDERING =================================================================
 
+
   if (formopen.isFormOpen === true) {
-    return <TimerForm createForm = {false} timers = {props.timers} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick}/>
+    return <TimerForm inDarkMode = {props.inDarkMode} createForm = {false} timers = {props.timers} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick}/>
 
   } else {
-      return (
-        <div>
-          <TimerMain timers ={props.timers} timersEls = {timingEls} deleteClick ={deleteClickHandler} editClick ={editClickHandler}/>
-        </div>
-      )
+      return <TimerMain inDarkMode = {props.inDarkMode} timers ={props.timers} timersEls = {timingEls} deleteClick ={deleteClickHandler} editClick ={editClickHandler}/>
   }
 
 
