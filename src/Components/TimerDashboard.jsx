@@ -134,7 +134,7 @@ function TimerDashboard() {
   
   let className = 'dashboard';
   if(darkMode === false){
-    className += '_dark'
+    className += '_light'
   }
   
   if (toogledAdd.isAddFormOn) {
@@ -143,7 +143,7 @@ function TimerDashboard() {
       <div className={className} >
         <TimerHeader inDarkMode = {darkMode} modeChangeHandler = {handleModeChange}/>
         <div className='toogledForm'>
-          <TimerForm createForm ={true} timers = {timerState} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick} />
+          <TimerForm createForm ={true} inDarkMode = {darkMode} timers = {timerState} saveClickHandler ={saveClick} cancelClickHandler ={cancelClick} />
         </div>
       </div>
     )

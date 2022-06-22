@@ -1,10 +1,5 @@
 body {
   margin: 0;
-  color: #fafafa;
-  /* background-color: #101214; */
-  background-color: rgb(248 249 250);
-  background-size: cover;
-
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,14 +12,42 @@ code {
     monospace;
 }
 
-.App{
-  margin: 0%;
-  margin-top: 0%;
+/* .App{
+} */
+
+/* ================ TIMER DASHBOARD ( light and dark mode ) ============== */
+.dashboard{
   padding-top: 0%;
-  position: relative;
+  margin: 0;
+  color: #fafafa;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  background-color: #101214;    
+  /* background-position: 0; */
+  background-size: cover;
+  overflow-y: hidden;
+  height: 100%;
 }
 
-/* ======= HEADER NAV ========== */
+.dashboard_light {
+  padding-top: 0%;
+  margin: 0;
+  background-color: #b8c6b8a3;   
+  background-image: linear-gradient(315deg,#b8c6b8 0%,#f5f7fa 150%);
+  background-position: 0;
+  background-size: cover;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+
+/* ===================== HEADER NAV ===================== */
 .header{
   padding: 0 0.7rem;
   margin-top: 0px;
@@ -46,7 +69,7 @@ code {
   border: 1px solid #a1a2a3;
   height: 50px;
 }
-.header_dark{
+.header_light{
   padding: 0 0.7rem;
   margin-top: 0px;
   position: fixed;
@@ -54,10 +77,10 @@ code {
   left: 0px;
   right: 0px;
   z-index: 99999;
-  /* background-color: #171b1f; */
-  background-color: rgb(192 193 195);
+  background-color: #ffffffb0;
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 20%);
   color: #171b1f;
-  backdrop-filter: blur(200px);
+  backdrop-filter: blur(100px);
   text-align: center;
   font-size: 13px;
   display: flex;
@@ -66,7 +89,6 @@ code {
   align-content: center;
   align-items: center;
   border-radius: 8px;
-  border: 1px solid #171b1f;
   height: 50px;
 }
 .header .modeMenu{
@@ -75,22 +97,24 @@ code {
   font-size: 30px;
   color: #fafafa;
 }
-.header_dark .modeMenu{
+.header_light .modeMenu{
   background-color: transparent;
   border: none;
   font-size: 30px;
   color: #171b1f;
 }
 
-/* ==========TIMERLIST AND IT'S TIMER CONTAINERS ========== */
+/* =====================TIMERLIST AND IT'S TIMER CONTAINERS ================= */
 .TimerList{
-  margin-top: 90px;
-  margin-bottom: 30px;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  overflow-y: auto;
+  height: 85%;
+  z-index: 9999;
 }
-/* ==== then the timer containers ==== */
+/* ============= then the timer containers ============== */
 .TimerContainer{
-  margin-top: 50px;
-  /* margin-bottom: 20px; */
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -98,15 +122,14 @@ code {
   width: 86%;
   height: 220px;
   background-color: #171b1f;
-  /* background-color: #ecf5ff; */
   backdrop-filter: blur(100px);
   padding: 0px 0.7rem;
   border-radius: 10px;
   border: 1px solid #a1a2a3;
   z-index: 1;
 }
-.TimerContainer_dark{
-  margin-top: 50px;
+.TimerContainer_light{
+  margin-top: 30px;
   /* margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
@@ -114,13 +137,11 @@ code {
   margin-right: auto;
   width: 86%;
   height: 220px;
-  /* background-color: #171b1f; */
-  background-color: rgb(192 193 195);
-  /* background-color: #ecf5ff; */
-  backdrop-filter: blur(200px);
+  background-color: #ffffffb0;
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 20%);
+  /* backdrop-filter: blur(200px); */
   padding: 0px 0.7rem;
   border-radius: 10px;
-  border: 1px solid #171b1f;
   z-index: 1;
   color: black;
   font-weight: bolder;
@@ -188,7 +209,7 @@ code {
 }
 
 
-/* ========== TIMER FORM TOOGLE ========== */
+/* ================= TIMER FORM TOOGLE ( light and Dark mode) ===================== */
 .TimerBtn{
   position: fixed;
   bottom: 10px;
@@ -207,15 +228,33 @@ code {
   font-size: 40px;
   color: #fafafa;
 }
+.TimerBtn_light{
+  position: fixed;
+  bottom: 10px;
+  left: 0px;
+  right: 0px;
+  z-index: 9999;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 72px;
+  aspect-ratio: 1;
+  background-color: #ffffffb0;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 20%);
+  border-radius: 40px;
+  font-size: 40px;
+  color: #101214;
+  border: none;
+}
 
-
-/* ========= then the  TIMER FORM ========== */
+/* ================ THEN THE TIMER FORM ( light and dark mode ) ==================== */
 .timerForm{
   display: flex;
   flex-direction: column;
   width: 86%;
   margin-left: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-right: auto;
   width: 86%;
   height: 210px;
@@ -225,16 +264,37 @@ code {
   border-radius: 10px;
   border: 1px solid #a1a2a3;
   z-index: 1;
-  font-size: 17px;
-  
+  font-size: 17px; 
 }
-.timerForm input{
+.timerForm_light{
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  margin-left: auto;
+  margin-top: 30px;
+  margin-right: auto;
+  width: 86%;
+  height: 210px;
+  background-color: #ffffffb0;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 20%);
+  padding: 5px 0.7rem;
+  border-radius: 15px;
+  z-index: 1;
+  font-size: 17px; 
+}
+.timerForm input, .timerForm_light input {
   width: 95%;
   height: 30px;
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: 16px;
   padding: 0px 6px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  color: #101214;
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 20%);
 }
 /* ======= timer form when adding from the toogle button ======== */
 .toogledForm{
@@ -243,13 +303,10 @@ code {
   left: 0px;
   right: 0px;
 }
-/* ======= then TIMER FORM BUTTONS =======  */
+/* =============== then TIMER FORM BUTTONS ====================  */
 .formButtons{
   display: flex;
   flex-direction: row;
-  /* gap: 40px; */
-
-  /* margin-top: 10px; */
   margin-right: auto;
   margin-left: auto;
 }
@@ -269,8 +326,23 @@ code {
   border-radius: 10px;
   color: rgb(32, 33, 36);
   border: 1px solid #fafafa;
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 20%);
   margin-top: 15px;
   margin-bottom: 10px;
+}
+.timerForm_light button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  width: 110px;
+  border-radius: 10px;
+  color: rgb(32, 33, 36);
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 20%);
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border: none;
 }
 .cancelBtn{
   background: rgb(255,58,58);
@@ -285,7 +357,7 @@ code {
 .formButtons .icons{
   font-size: 20px;
 }
-/* ======= TIMERlANDING  ======*/
+/* ============== TIMERlANDING  ================*/
 .TimerLanding{
   position: absolute;
   inset: 140px 0px;

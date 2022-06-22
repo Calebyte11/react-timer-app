@@ -16,11 +16,16 @@ function TimerFormToogle(props) {
   };
 
  
-  
 
+  let className = "TimerBtn";
+  if (props.inDarkMode) {
+      className = "TimerBtn"
+  } else {
+      className += '_light'
+  }
     return (
       <div className='toogle' >
-        <button className='TimerBtn' onClick={handleAddClick}>
+        <button className={className} onClick={handleAddClick}>
             <FontAwesomeIcon icon={faPlus} />
         </button>
     </div>

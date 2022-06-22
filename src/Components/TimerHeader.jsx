@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faMoon } from '@fortawesome/free-solid-svg-icons';
-import {faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import {FaMoon } from 'react-icons/fa';
+import {BsBrightnessHighFill} from 'react-icons/bs'
 
 class TimerHeader extends Component {
   
@@ -13,12 +12,12 @@ class TimerHeader extends Component {
 
   render() {
     
-    const icons = this.props.inDarkMode ? <FontAwesomeIcon icon= {faLightbulb} /> : <FontAwesomeIcon icon= {faMoon} />
+    const icons = this.props.inDarkMode ? < BsBrightnessHighFill /> : <FaMoon />
     let className = 'header'
     if(this.props.inDarkMode){
       className = 'header'
     } else {
-      className +='_dark'
+      className +='_light'
     }
     return (
       <div className={className}>
@@ -30,27 +29,6 @@ class TimerHeader extends Component {
     )
   }
 
-  // {
-  //   padding: 0 0.7rem;
-  //   margin-top: 0px;
-  //   position: fixed;
-  //   top: 0px;
-  //   left: 0px;
-  //   right: 0px;
-  //   z-index: 99999;
-  //   background-color: #171b1f;
-  //   backdrop-filter: blur(100px);
-  //   text-align: center;
-  //   font-size: 13px;
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-between;
-  //   align-content: center;
-  //   align-items: center;
-  //   border-radius: 8px;
-  //   border: 1px solid #a1a2a3;
-  //   height: 50px;
-  // }
   
 }
 

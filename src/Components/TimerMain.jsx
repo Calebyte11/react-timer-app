@@ -12,7 +12,7 @@ function TimerMain(props) {
     if (props.inDarkMode) {
         className = "TimerContainer"
     } else {
-        className += '_dark'
+        className += '_light'
     }
 
     return (

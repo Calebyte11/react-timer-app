@@ -67,9 +67,17 @@ function TimerForm(props) {
 
 
   // ======== RENDERING  OF JSX ============
+  
+  let className = "timerForm";
+  if (props.inDarkMode) {
+      className = "timerForm"
+  } else {
+      className += '_light'
+  }
+
   return (
     <div>
-        <form className='timerForm' >
+        <form className={className} >
             {inputs.map( (input) => {
               return(
                 <React.Fragment key={input.id}>
