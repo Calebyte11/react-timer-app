@@ -110,6 +110,8 @@ code {
   margin-bottom: 100px;
   overflow-y: auto;
   height: 85%;
+  width : 100%;
+  border-radius: 6%;
   z-index: 9999;
 }
 /* ============= then the timer containers ============== */
@@ -219,7 +221,7 @@ code {
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
-  width: 72px;
+  width: 55px;
   aspect-ratio: 1;
   background-color: #171b1f;
   backdrop-filter: blur(100px);
@@ -237,7 +239,7 @@ code {
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
-  width: 72px;
+  width: 55px;
   aspect-ratio: 1;
   background-color: #ffffffb0;
   backdrop-filter: blur(100px);
