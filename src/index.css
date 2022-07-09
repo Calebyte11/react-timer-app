@@ -297,6 +297,7 @@ code {
   background-color: white;
   color: #101214;
   box-shadow: 0 0 10px 5px rgb(0 0 0 / 20%);
+  outline: none;
 }
 /* ======= timer form when adding from the toogle button ======== */
 .toogledForm{

@@ -19,7 +19,7 @@ class TimerList extends Component {
 
             // ===== conditional rendering landing page if Local Storage is empty(at first use) ===
             return (
-                <TimerLanding/>
+                <TimerLanding inDarkMode = {this.props.inDarkMode}/>
             )
             
         } else {

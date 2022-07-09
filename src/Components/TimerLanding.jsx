@@ -2,11 +2,17 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
-function TimerLanding() {
-  return (
-    <div className='TimerLanding'>
+function TimerLanding(props) {
 
-        <div className='TimerContainer'>
+    let className = 'TimerContainer';
+    if(props.inDarkMode === false){
+      className += '_light'
+    }
+    
+  return (
+    <div className= 'TimerLanding'>
+
+        <div className={className}>
             <div className='containerHead'>
                 <div>
                     <p>Title : </p>
