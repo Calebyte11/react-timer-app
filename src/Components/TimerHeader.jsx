@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import {FaMoon } from 'react-icons/fa';
 import {BsBrightnessHighFill} from 'react-icons/bs'
+import {BsFillMoonStarsFill} from 'react-icons/bs'
 
 class TimerHeader extends Component {
   
@@ -12,7 +12,7 @@ class TimerHeader extends Component {
 
   render() {
     
-    const icons = this.props.inDarkMode ? < BsBrightnessHighFill /> : <FaMoon />
+    const icons = this.props.inDarkMode ? < BsBrightnessHighFill /> : <BsFillMoonStarsFill />
     let className = 'header'
     if(this.props.inDarkMode){
       className = 'header'
